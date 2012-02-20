@@ -1,0 +1,20 @@
+
+from django.db import models
+
+# Create your models here.
+
+class Shape(models.Model):
+    shape = models.CharField(max_length=100)
+    def _unicode_(self): 
+        return self.shape
+
+class Color(models.Model):
+    color = modles.CharField(max_length=100)
+    def _unicode_(self): 
+        return self.color
+
+class Gummy(modles.Model):
+    shape = models.ForeignKey(Shape)
+    color = models.ManyToManyField(Color)
+    def _unicode_(self): 
+        return self.id
