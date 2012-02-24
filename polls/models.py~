@@ -12,3 +12,7 @@ class Choice(models.Model):
     def __unicode__(self):
         return self.choice
 
+import datetime
+class Poll(models.Model):
+    def was_published_today(self):
+        return self.pub_date.date() == datetime.date.today()
